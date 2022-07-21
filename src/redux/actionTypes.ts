@@ -1,1 +1,5 @@
-export const IS_LOGIN = "IS_LOGIN"
+const types = {
+    IS_LOGIN : "IS_LOGIN",
+}
+
+export default types;

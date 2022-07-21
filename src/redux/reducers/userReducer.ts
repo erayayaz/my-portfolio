@@ -1,13 +1,16 @@
-import {User, UserAction, UserState} from "../../types/user";
+// @ts-ignore
+import I from 'immutable';
+import actionTypes from "../actionTypes";
+import { IAction} from "../actions/userActions";
 
-const defaultState: UserState = {
-    data: {} as User,
-    loading: false,
-    error: ""
-}
+export default (store: I.Map<string, any> = I.Map(), action: IAction) => {
+    const data = I.fromJS(action.data);
 
-const userReducer = (state: UserState= defaultState, action: UserAction) => {
-    return state;
-}
+    switch (action.type) {
 
-export default userReducer;
+        case actionTypes.IS_LOGIN:
+            return store.set('isLogin', data);
+        default:
+            return store;
+    }
+};
