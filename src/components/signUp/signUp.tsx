@@ -1,40 +1,39 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {connect} from "react-redux";
-import './signUp.scss';
+import '../common/common.scss';
+import {Context} from "../common/context";
 
 interface IProps {
-    isLogin: boolean;
 }
 
 const SignUp: React.FC<IProps> = (props) => {
+
+    // @ts-ignore
+    const { switchToSignIn } : any = useContext(Context);
+
     return (
-        <div className={`signUp-wrapper`}>
-            <div className={`signUp-wrapper__topside`}>
-                <div className={`signUp-wrapper__backside`}>
-                </div>
-                <div className={`signUp-wrapper__header`}>
-                    <div className={`signUp-wrapper__header-text`}>
-                        Welcome
-                    </div>
-                    <div className={`signUp-wrapper__header-text`}>
-                        Back
-                    </div>
-                    <div className={`signUp-wrapper__header-small-text`}>
-                        Please sign-in to continue!
-                    </div>
-                </div>
-            </div>
+        <div className={`sign-wrapper`}>
+            <form className={`sign-wrapper__form`}>
+                <input className={`sign-wrapper__input`} placeholder={"Full Name"} type={"text"}/>
+                <input className={`sign-wrapper__input`} placeholder={"Email"} type={"email"}/>
+                <input className={`sign-wrapper__input`} placeholder={"Password"} type={"password"}/>
+                <input className={`sign-wrapper__input`} placeholder={"Confirm Password"} type={"password"}/>
+            </form>
+            <button className={`sign-wrapper__submit-button`} type={"submit"}>Sign up</button>
+            <a className={`sign-wrapper__link`} onClick={switchToSignIn} href={"#"}>
+                Have an account already?
+                <a className={`sign-wrapper__link-bold`} onClick={switchToSignIn} href={"#"}>
+                    Log in
+                </a>
+            </a>
         </div>
     );
 };
 
-function mapStateToProps({user} :any) {
-    return {
-        isLogin: user.get('isLogin', false),
-    }
+function mapStateToProps({user}: any) {
+    return {};
 }
 
-const mapDispatchToProps = {
-};
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

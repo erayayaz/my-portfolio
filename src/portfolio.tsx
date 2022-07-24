@@ -1,7 +1,8 @@
 import React from 'react';
 import './portfolio.scss';
-import SignUp from "./components/signUp/signUp";
-import {setIsUserLogin,
+import UpsideSign from "./components/upsideSign/upsideSign";
+import {
+    setIsUserLogin,
     TSetIsUserLogin,
 } from "./redux/actions/userActions";
 import {connect} from "react-redux";
@@ -16,7 +17,7 @@ const Portfolio: React.FC<IProps> = (props) => {
 
     return (
         <div className={`portfolio-wrapper`}>
-            <SignUp />
+            <UpsideSign />
         </div>
     );
 };
