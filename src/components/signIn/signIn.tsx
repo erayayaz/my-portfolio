@@ -15,14 +15,16 @@ const SignIn: React.FC<IProps> = (props) => {
                 <input className={`sign-wrapper__input`} placeholder={"Email"} type={"email"} />
                 <input className={`sign-wrapper__input`} placeholder={"Password"} type={"password"}/>
                 </form>
-            <a className={`sign-wrapper__link`} href={"#"}>Forget your password?</a>
+
             <button className={`sign-wrapper__submit-button`} type={"submit"}>Sign in</button>
-            <a className={`sign-wrapper__link`}  onClick={switchToSignUp} href={"#"}>
-                    Don't have an account?
+            <div className={`sign-wrapper__link-area`}>
+                <a className={`sign-wrapper__link`}  onClick={switchToSignUp} href={"#"}>
+                        Don't have an account?
+                </a>
                 <a className={`sign-wrapper__link-bold`} onClick={switchToSignUp} href={"#"}>
                     Sign up
                 </a>
-            </a>
+            </div>
         </div>
     );
 };

@@ -20,12 +20,14 @@ const SignUp: React.FC<IProps> = (props) => {
                 <input className={`sign-wrapper__input`} placeholder={"Confirm Password"} type={"password"}/>
             </form>
             <button className={`sign-wrapper__submit-button`} type={"submit"}>Sign up</button>
-            <a className={`sign-wrapper__link`} onClick={switchToSignIn} href={"#"}>
-                Have an account already?
+            <div className={`sign-wrapper__link-area`}>
+                <a className={`sign-wrapper__link`} onClick={switchToSignIn} href={"#"}>
+                    Have an account already?
+                </a>
                 <a className={`sign-wrapper__link-bold`} onClick={switchToSignIn} href={"#"}>
                     Log in
                 </a>
-            </a>
+            </div>
         </div>
     );
 };

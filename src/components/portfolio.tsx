@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './portfolio.scss';
-import UpsideSign from "./components/upsideSign/upsideSign";
+import UpsideSign from "./upsideSign/upsideSign";
 import {
     setIsUserLogin,
     TSetIsUserLogin,
-} from "./redux/actions/userActions";
+} from "../redux/actions/userActions";
 import {connect} from "react-redux";
 
 interface IProps {
@@ -14,6 +14,11 @@ interface IProps {
 }
 
 const Portfolio: React.FC<IProps> = (props) => {
+
+    useEffect(() => {
+        console.log("Hi, I'm Eray Ayaz. If you have any feedback about my portfolio site," +
+            " I would appreaciate it if you could get back to me via email. Happy Coding :)")
+    }, []);
 
     return (
         <div className={`portfolio-wrapper`}>

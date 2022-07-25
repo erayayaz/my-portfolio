@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Portfolio from './portfolio';
+import Portfolio from '../components/portfolio';
 import { shallow } from "enzyme";
 
 test('renders learn react link', () => {
