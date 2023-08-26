@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import './portfolio.scss';
-import UpsideSign from "./upsideSign/upsideSign";
+
 import {
     setIsUserLogin,
     TSetIsUserLogin,
 } from "../redux/actions/userActions";
 import {connect} from "react-redux";
+import NavBar from "./navbar/navbar";
 
 interface IProps {
     isLogin: boolean;
@@ -20,9 +21,16 @@ const Portfolio: React.FC<IProps> = (props) => {
             " I would appreaciate it if you could get back to me via email. Happy Coding :)")
     }, []);
 
+    const menuItems = [
+        { label: 'Home', path: '/' },
+        { label: 'About', path: '/about' },
+        { label: 'Blog', path: '/blog' },
+        { label: 'Email', path: '/email' },
+    ];
+
     return (
         <div className={`portfolio-wrapper`}>
-            <UpsideSign />
+            <NavBar items={menuItems} />
         </div>
     );
 };

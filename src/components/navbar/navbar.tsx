@@ -1,14 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from "react-redux";
+import './navbar.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-interface IProps {
+interface NavItem {
+    label: string;
+    path: string;
 }
 
-const NavBar: React.FC<IProps> = (props) => {
-    return (
-        <div className={`navbar-wrapper`}>
+interface NavBarProps {
+    items: NavItem[];
+}
 
-        </div>
+const NavBar: React.FC<NavBarProps> = ({ items }) => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    return (
+        <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
+            <div className="menu-icon" onClick={toggleMenu}>
+                <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+            </div>
+            <ul  className={`nav-links ${menuOpen ? 'active' : ''}`}>
+                {items.map((item, index) => (
+                    <li key={index} className="nav-item">
+                        <a className={'navbar-item'} href={item.path}>
+                            {item.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     );
 };
 

@@ -1,14 +1,13 @@
 import React, {useContext} from 'react';
 import {connect} from "react-redux";
-import '../common/common.scss';
-import {Context} from "../common/context";
+import '../../common/common.scss';
+import {Context} from "../../common/context";
 
 interface IProps {
 }
 
 const SignUp: React.FC<IProps> = (props) => {
 
-    // @ts-ignore
     const { switchToSignIn } : any = useContext(Context);
 
     return (

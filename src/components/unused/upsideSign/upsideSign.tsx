@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import {connect} from "react-redux";
 import './upsideSign.scss';
 import SignIn from "../signIn/signIn";
-import { motion } from  "framer-motion";
-import {Context} from "../common/context";
+import {Context} from "../../common/context";
 import SignUp from "../signUp/signUp";
 
 interface IProps {
@@ -68,11 +67,6 @@ const UpsideSign: React.FC<IProps> = (props) => {
         <Context.Provider value={contextValue}>
             <div className={`upsideSign-wrapper`}>
                 <div className={`upsideSign-wrapper__topside`}>
-                    <motion.div initial={false} className={`upsideSign-wrapper__backside`}
-                                animate={isExpanded ? "expanded" : "collapsed"}
-                                variants={backDropVariants}
-                                transition={expandingTransition}>
-                    </motion.div>
                     {active === "signin" &&
                         <div className={`upsideSign-wrapper__header`}>
                             <div className={`upsideSign-wrapper__header-text`}>
