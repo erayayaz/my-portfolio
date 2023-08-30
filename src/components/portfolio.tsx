@@ -7,6 +7,7 @@ import {
 } from "../redux/actions/userActions";
 import {connect} from "react-redux";
 import NavBar from "./navbar/navbar";
+import Home from "./home/home";
 
 interface IProps {
     isLogin: boolean;
@@ -31,6 +32,7 @@ const Portfolio: React.FC<IProps> = (props) => {
     return (
         <div className={`portfolio-wrapper`}>
             <NavBar items={menuItems} />
+            <Home />
         </div>
     );
 };
