@@ -32,7 +32,6 @@ const Portfolio: React.FC<IProps> = (props) => {
     return (
         <div className={`portfolio-wrapper`}>
             <NavBar items={menuItems} />
-            <Home />
         </div>
     );
 };
